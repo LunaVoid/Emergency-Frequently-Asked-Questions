@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"></head>
+<body style = "font-family: Lato,Georgia, 'Times New Roman', Times, serif;"class = "font-serif bg-white w-screen h-screen">
+    <nav class = "flex w-full mb-10 items-center flex-col justify-items-center">
+        <h1 class = "text-7xl ">Disaster Report and Status</h1>
+    </nav>
+    <main class = "flex w-full h-full">
+    <div class = "text-center w-full h-3/4  bg-slate-100 m-5 overflow-y-auto">
+        <h2 class = "text-5xl">Latest Weather Responses</h2>
+        <div class = "m-10 overflow-y-auto">
+            <ul>
+                {% for item in data %}
+                    <li class = "text-xs">{{ item.headline }}</li>
+                    <li class = "text-xs">Severity: {{ item.severity }}</li>
+                    <li class = "text-xs">Certainty: {{ item.certainty }}</li>
+                    <li class = "text-xs">Description: {{ item.description }}</li>
+                    <li class = "text-xs">Instructions: {{ item.instruction }}</li>
+                    <li class = "text-xs">Response: {{ item.response }}</li>
+                    <li class = "text-xs">Effective Date: {{ item.effectiveDate }}</li>  <!-- List items -->
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class = "w-full drop-shadow h-3/4 bg-slate-100 m-5">
+        <h2 class = "text-center text-5xl">FAQs</h2>
+        <div class = " m-4 overflow-y-auto">
+            
+        </div>
+        <div class = "text-center overflow-x-auto">
+            <ul>
+                {% for item in faq %}
+                <div class = "m-4">
+                    <li class = "text-xs">Question: {{ item['question'] }}</li>
+                    <li class = "text-xs">Answer: {{ item['answer']}}</li>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.tailwindcss.com"></script> 
+</body>
+</html>

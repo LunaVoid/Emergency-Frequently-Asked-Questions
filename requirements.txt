@@ -1,0 +1,8 @@
+requests
+schedule
+flask
+bleak
+asyncio
+gtts
+geocoder
+numpy

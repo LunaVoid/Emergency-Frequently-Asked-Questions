@@ -1,0 +1,9 @@
+1. Fetch Weather from NOAA/ Severity
+2. write the data to file, store.txt constantly every 5 minutes in case power goes out
+3. if online than use IBM llm to inform the user of current weather and what to do
+4. Text to speech the audio for user.
+5. Take user input from express to send ask questions
+6. if offline use local ollama model to help the user.
+
+
+Weather object includes:
